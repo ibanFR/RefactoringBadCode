@@ -14,6 +14,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 8. Remove unnecessary `continue` statement - enhances code readability.
 9. Use `isEmpty()` to check whether the collection is empty or not.
 10. Remove unnecessary `main` method - cleans up the code by removing unused entry points.
+11. Replace `equals("")` with `isEmpty()` - improves readability and performance.
 
 
 

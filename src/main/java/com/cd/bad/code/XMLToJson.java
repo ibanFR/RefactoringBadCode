@@ -204,7 +204,7 @@ public class XMLToJson
     public String pathMapping(String shortXPath) throws Exception
     {
         String tagetString = null;
-        if (shortXPath.equals(""))
+        if (shortXPath.isEmpty())
         {
             tagetString = "//toc";
         }
