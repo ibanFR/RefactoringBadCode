@@ -24,6 +24,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 2. Inline `hasChildren` variable - eliminates unnecessary variable and simplifies the code.
 3. Extract method `getNode` to reduce complexity before start iterating - breaks down large methods into smaller, more manageable pieces.
 4. Extract method `processElement` to handle element processing - Use `option`+`Up Arrow` to expand your selection.
-5. Extract method `getJsonForDocument` to inject a Document instead of obtaining it inside the method
+5. Extract method `closeJson` to handle JSON closing logic
+6. Extract method `getJsonForDocument` to inject a Document instead of obtaining it inside the method
 
 [Decompose conditional]: https://refactoring.guru/decompose-conditional
