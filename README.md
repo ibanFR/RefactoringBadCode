@@ -16,6 +16,11 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 10. Remove unnecessary `main` method - cleans up the code by removing unused entry points.
 11. Replace `equals("")` with `isEmpty()` - improves readability and performance.
 
+## Step 2: Reducing Complexity
 
+"Good design is moving things that are related closer together and things that are unrelated further apart." - Kent Beck on Tidy First
+
+1. Simplify `hasChildren variable` assignment by removing if else statements - reduces nesting and improves readability.
+2. Extract method to reduce complexity - breaks down large methods into smaller, more manageable pieces.
 
 [Decompose conditional]: https://refactoring.guru/decompose-conditional

@@ -77,11 +77,7 @@ public class XMLToJson
         {
             Element elem = i.next();
             String eleName = elem.getName();
-            boolean hasChildren = false;
-            if (hasChildren(elem))
-            {
-                hasChildren = true;
-            }
+            boolean hasChildren = hasChildren(elem);
             List<Attribute> list = elem.attributes();
             String titleAttrContent = elem.attributeValue("title");
             String fileAttrContent = elem.attributeValue("file");
