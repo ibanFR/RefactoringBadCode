@@ -22,6 +22,6 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 
 1. Simplify `hasChildren` variable assignment by removing if else statements - reduces nesting and improves readability.
 2. Inline `hasChildren` variable - eliminates unnecessary variable and simplifies the code.
-3. Extract method to reduce complexity - breaks down large methods into smaller, more manageable pieces.
+3. Extract method `getNode` to reduce complexity before start iterating - breaks down large methods into smaller, more manageable pieces.
 
 [Decompose conditional]: https://refactoring.guru/decompose-conditional
