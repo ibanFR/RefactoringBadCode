@@ -16,7 +16,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 10. Remove unnecessary `main` method - cleans up the code by removing unused entry points.
 11. Replace `equals("")` with `isEmpty()` - improves readability and performance.
 
-## Step 2: Reducing Complexity
+## Step 2: Reducing Complexity and Composing Methods
 
 "Good design is moving things that are related closer together and things that are unrelated further apart." - Kent Beck on Tidy First
 
