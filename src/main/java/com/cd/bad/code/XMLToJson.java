@@ -75,10 +75,10 @@ public class XMLToJson
 
         for (Iterator<Element> i = node.elementIterator(); i.hasNext();)
         {
-            Element elem = (Element) i.next();
+            Element elem = i.next();
             String eleName = elem.getName();
             Boolean hasChildren = false;
-            if ((elem.elements().size() > 0))
+            if (hasChildren(elem))
             {
                 hasChildren = true;
                 //current element has children itself, state shoud be "closed"
@@ -190,6 +190,11 @@ public class XMLToJson
         jsonString = jsonString.concat("]");
         return jsonString;
 
+    }
+
+    private static boolean hasChildren(Element elem) {
+        return elem.elements()
+                       .size() > 0;
     }
 
     /*
