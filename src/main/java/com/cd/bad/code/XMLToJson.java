@@ -216,16 +216,12 @@ public class XMLToJson
         int newStart = 0;
         String segString = "";
         String valueString = "";
-        //dth???
-        //need mapping all senarios
-        //already??
         while (shortXPath.indexOf("_", newStart) > -1)
         {
             int keyValueSepPos = 0;
-            String keyString = "";//not necessary key, might be type attribute
+            String keyString = "";
             segString = shortXPath.substring(newStart, shortXPath.indexOf("_", newStart));
-            newStart = shortXPath.indexOf("_", newStart) + 1;//new start search point
-            //System.out.println(newStart);
+            newStart = shortXPath.indexOf("_", newStart) + 1;
             if (segString.indexOf(":") > 0)
             {
                 keyValueSepPos = segString.indexOf(":");
@@ -242,7 +238,6 @@ public class XMLToJson
                 tagetString = tagetString.concat("='").concat(valueString).concat("']/");
             }
         }
-        //this is for scenerio either no "_" or sub string after "_"
         segString = shortXPath.substring(newStart);
         System.out.println(segString);
         if (segString.indexOf(":") > 0)
@@ -261,17 +256,6 @@ public class XMLToJson
             tagetString = tagetString.concat("='").concat(lastValueString).concat("']");
         }
         return tagetString;
-
-    }
-
-    public static void main(String[] args) throws Exception
-    {
-        XMLToJson x2j = new XMLToJson();
-        String test = "fk:AMM24_fk:AMM24-FM";
-
-        test = "";
-        System.out.println(x2j.getJson(new URL("http://localhost:8080/WebNavSpring/q400/amm/toc.xml"), test));
-        //System.out.println(x2j.pathMapping(test));
 
     }
 }
