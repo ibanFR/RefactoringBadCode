@@ -77,12 +77,10 @@ public class XMLToJson
         {
             Element elem = i.next();
             String eleName = elem.getName();
-            Boolean hasChildren = false;
+            boolean hasChildren = false;
             if (hasChildren(elem))
             {
                 hasChildren = true;
-                //current element has children itself, state shoud be "closed"
-
             }
             List<Attribute> list = elem.attributes();
             String titleAttrContent = elem.attributeValue("title");
