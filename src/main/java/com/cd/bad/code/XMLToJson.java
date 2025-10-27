@@ -148,9 +148,7 @@ public class XMLToJson
                 }
                 jsonString = jsonString.concat("},");
             }
-            continue;
         }
-        //return list;
         jsonString = jsonString.substring(0, jsonString.length() - 1);
         jsonString = jsonString.concat("]");
         return jsonString;
