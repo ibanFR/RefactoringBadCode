@@ -114,11 +114,6 @@ public class XMLToJson
                     jsonString = jsonString.concat(",'state':'closed'");
 
                 }
-                else
-                {
-                    //no need to put anything
-                    //jsonString = jsonString.concat("'state':'???'");
-                }
                 jsonString = jsonString.concat("},");
             }
 

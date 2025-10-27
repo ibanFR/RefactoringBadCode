@@ -10,6 +10,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 4. Remove the cast to Element - unnecessary and clutters the code.
 5. Convert wrapper type `Boolean` to primitive `boolean` - avoids unnecessary object creation and potential null pointer exceptions.
 6. [Decompose conditional] - extract conditional code to clearly named method.
+7. Remove else branch with empty body - simplifies the code by removing unnecessary branches.
 
 
 
