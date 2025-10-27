@@ -58,6 +58,11 @@ public class XMLToJson
      public String getJson(URL urlToTOC, String xPathString) throws Exception
     {
         Document TOCDoc = util.getDocument(urlToTOC);
+        return getJsonForDocument(xPathString, TOCDoc);
+
+    }
+
+    private String getJsonForDocument(String xPathString, Document TOCDoc) throws Exception {
         String jsonString = "[";
 
         Element node = getNode(xPathString, TOCDoc);
@@ -69,7 +74,6 @@ public class XMLToJson
         jsonString = jsonString.substring(0, jsonString.length() - 1);
         jsonString = jsonString.concat("]");
         return jsonString;
-
     }
 
     private static String processElement(String xPathString, String jsonString, Iterator<Element> i) {
