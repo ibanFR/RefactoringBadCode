@@ -138,20 +138,13 @@ public class XMLToJson
                     else if (attrName.equals("type"))
                     {
                         String typeContent = elem.attributeValue("type");
-                        //doc element has type "history"
                         if (typeContent == "history")
                         {
                             jsonString = jsonString.concat("'attr':{'id':'").concat(xPathString).concat("_fth,");
 
                         }
-                        else if (typeContent == "?????")
-                        {
-                            //any values need to concern????
-                        }
                         break;
-
                     }
-
                 }
                 jsonString = jsonString.concat("},");
             }
