@@ -156,8 +156,7 @@ public class XMLToJson
     }
 
     private static boolean hasChildren(Element elem) {
-        return elem.elements()
-                       .size() > 0;
+        return !elem.elements().isEmpty();
     }
 
     /*

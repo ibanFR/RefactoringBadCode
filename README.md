@@ -12,6 +12,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 6. [Decompose conditional] - extract conditional code to clearly named method.
 7. Remove else branch with empty body - simplifies the code by removing unnecessary branches.
 8. Remove unnecessary `continue` statement - enhances code readability.
+9. Use `isEmpty()` to check whether the collection is empty or not.
 
 
 
