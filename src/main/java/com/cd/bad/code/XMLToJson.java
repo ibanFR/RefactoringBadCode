@@ -77,7 +77,6 @@ public class XMLToJson
         {
             Element elem = i.next();
             String eleName = elem.getName();
-            boolean hasChildren = hasChildren(elem);
             List<Attribute> list = elem.attributes();
             String titleAttrContent = elem.attributeValue("title");
             String fileAttrContent = elem.attributeValue("file");
@@ -105,7 +104,7 @@ public class XMLToJson
                         break;
                     }
                 }
-                if (hasChildren)
+                if (hasChildren(elem))
                 {
                     jsonString = jsonString.concat(",'state':'closed'");
 
