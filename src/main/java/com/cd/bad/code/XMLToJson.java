@@ -68,7 +68,7 @@ public class XMLToJson
         Element node = getNode(xPathString, TOCDoc);
 
         for (Iterator<Element> i = node.elementIterator(); i.hasNext(); ) {
-            jsonString = processElement(xPathString, jsonString, i);
+            jsonString = jsonString.concat(processElement(xPathString, i));
         }
         return closeJson(jsonString);
     }
@@ -79,8 +79,8 @@ public class XMLToJson
         return jsonString;
     }
 
-    private static String processElement(String xPathString, String jsonString, Iterator<Element> i) {
-        String jsonString1 = jsonString;
+    private static String processElement(String xPathString, Iterator<Element> i) {
+        String jsonString = "";
         Element elem = i.next();
         String eleName = elem.getName();
         List<Attribute> list = elem.attributes();
@@ -90,14 +90,14 @@ public class XMLToJson
         {
             for (Attribute attribute : list)
             {
-                jsonString1 = jsonString1.concat("{");
+                jsonString = jsonString.concat("{");
                 String attrName = attribute.getName();
                 //each one has to have "data" line, "attr" line "state" line and "children" line
-                jsonString1 = jsonString1.concat("'data':'").concat(titleAttrContent).concat("',");
+                jsonString = jsonString.concat("'data':'").concat(titleAttrContent).concat("',");
                 if (attrName.equals("key"))
                 {
                     String keyContent = elem.attributeValue("key");
-                    jsonString1 = jsonString1.concat("'attr':{'id':'").concat(xPathString).concat("_dk:").concat(keyContent).concat("','file':'").concat(fileAttrContent).concat("'}");
+                    jsonString = jsonString.concat("'attr':{'id':'").concat(xPathString).concat("_dk:").concat(keyContent).concat("','file':'").concat(fileAttrContent).concat("'}");
 
                     break;
                 }
@@ -105,33 +105,33 @@ public class XMLToJson
                 {
 
                     String trnumContent = elem.attributeValue("trnum");
-                    jsonString1 = jsonString1.concat("'attr':{'id':'").concat(xPathString).concat("_dtrn:").concat(trnumContent).concat("','file':'").concat(fileAttrContent).concat("'}");
+                    jsonString = jsonString.concat("'attr':{'id':'").concat(xPathString).concat("_dtrn:").concat(trnumContent).concat("','file':'").concat(fileAttrContent).concat("'}");
 
                     break;
                 }
             }
             if (hasChildren(elem))
             {
-                jsonString1 = jsonString1.concat(",'state':'closed'");
+                jsonString = jsonString.concat(",'state':'closed'");
 
             }
-            jsonString1 = jsonString1.concat("},");
+            jsonString = jsonString.concat("},");
         }
 
         else if (eleName == "folder")
         {
-            jsonString1 = jsonString1.concat("{");
+            jsonString = jsonString.concat("{");
             for (Attribute attribute : list)
             {
                 String attrName = attribute.getName();
-                jsonString1 = jsonString1.concat("'data':'").concat(titleAttrContent).concat("',");
+                jsonString = jsonString.concat("'data':'").concat(titleAttrContent).concat("',");
                 if (attrName.equals("key"))
                 {
                     String keyContent = elem.attributeValue("key");
-                    jsonString1 = jsonString1.concat("'attr':{'id':'").concat(xPathString).concat("_fk:").concat(keyContent).concat("'}");
+                    jsonString = jsonString.concat("'attr':{'id':'").concat(xPathString).concat("_fk:").concat(keyContent).concat("'}");
                     if (fileAttrContent != null)
                     {
-                        jsonString1 = jsonString1.concat("','file':'").concat(fileAttrContent).concat("'}");
+                        jsonString = jsonString.concat("','file':'").concat(fileAttrContent).concat("'}");
                     }
 
                     break;
@@ -141,15 +141,14 @@ public class XMLToJson
                     String typeContent = elem.attributeValue("type");
                     if (typeContent == "history")
                     {
-                        jsonString1 = jsonString1.concat("'attr':{'id':'").concat(xPathString).concat("_fth,");
+                        jsonString = jsonString.concat("'attr':{'id':'").concat(xPathString).concat("_fth,");
 
                     }
                     break;
                 }
             }
-            jsonString1 = jsonString1.concat("},");
+            jsonString = jsonString.concat("},");
         }
-        jsonString = jsonString1;
         return jsonString;
     }
 
