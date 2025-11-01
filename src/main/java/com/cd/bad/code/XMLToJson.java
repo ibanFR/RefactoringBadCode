@@ -68,7 +68,7 @@ public class XMLToJson
         Element node = getNode(xPathString, TOCDoc);
 
         for (Iterator<Element> i = node.elementIterator(); i.hasNext(); ) {
-            jsonString = jsonString.concat(processElement(xPathString, i));
+            jsonString = jsonString.concat(processElement(xPathString, i.next()));
         }
         return closeJson(jsonString);
     }
@@ -79,9 +79,8 @@ public class XMLToJson
         return jsonString;
     }
 
-    private static String processElement(String xPathString, Iterator<Element> i) {
+    private static String processElement(String xPathString, Element elem) {
         String jsonString = "";
-        Element elem = i.next();
         String eleName = elem.getName();
         List<Attribute> list = elem.attributes();
         String titleAttrContent = elem.attributeValue("title");
