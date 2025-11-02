@@ -6,6 +6,13 @@ import org.dom4j.Element;
 import java.util.List;
 
 public class DocumentElement {
+
+    private final String xPathString;
+
+    public DocumentElement(String xPathString) {
+        this.xPathString = xPathString;
+    }
+
     String toJsonString(String xPathString, Element elem) {
         String jsonString = "";
         String eleName = elem.getName();
