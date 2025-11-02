@@ -13,7 +13,7 @@ public class DocumentElement {
         this.xPathString = xPathString;
     }
 
-    String toJsonString(String xPathString, Element elem) {
+    String toJsonString(Element elem) {
         String jsonString = "";
         String eleName = elem.getName();
         List<Attribute> list = elem.attributes();

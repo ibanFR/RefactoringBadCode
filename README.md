@@ -37,6 +37,8 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Convert `toJsonString` method to an instance method of `DocumentElement` - improve encapsulation and support polymorphism.
     - Extract method `hasChildren` in `DocumentElement` class.
     - Create constructor `DocumentElement(String)` - pass arguments to the command on the constructor.
+    - Use `xPathString` field in `toJsonString` method - utilize instance fields for better encapsulation.
+    - Safe delete `xPathString` parameter from `toJsonString` method - remove unused parameters to clean up the method signature.
 
 
 
