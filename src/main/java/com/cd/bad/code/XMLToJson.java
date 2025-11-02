@@ -83,7 +83,7 @@ public class XMLToJson
 
     private static String processElement(String xPathString, Element elem) {
         DocumentElement documentElem = new DocumentElement(elem, xPathString);
-         return documentElem.toJsonString(elem);
+         return documentElem.toJsonString();
     }
 
     private Element getNode(String xPathString, Document TOCDoc) throws Exception {

@@ -41,6 +41,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Safe delete `xPathString` parameter from `toJsonString` method - remove unused parameters to clean up the method signature.
     - Add `Element` parameter to `DocumentElement` constructor - ensure all necessary data is provided at instantiation.
     - Use `element` field in `toJsonString` method - utilize instance fields for better encapsulation.
+    - Safe delete `element` parameter from `toJsonString` method - further clean up the method signature.
 
 
 

@@ -15,7 +15,7 @@ public class DocumentElement {
         this.xPathString = xPathString;
     }
 
-    String toJsonString(Element elem) {
+    String toJsonString() {
         String jsonString = "";
         String eleName = this.elem.getName();
         List<Attribute> list = this.elem.attributes();
