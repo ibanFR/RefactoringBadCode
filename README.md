@@ -35,6 +35,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Add `DocumentElement` as parameter to `toJsonString` method.
     - Inline method `hasChildren` - make the code accessible from `toJsonString` method.
     - Convert `toJsonString` method to an instance method of `DocumentElement` - improve encapsulation and support polymorphism.
+    - Extract method `hasChildren` in `DocumentElement` class.
 
 
 

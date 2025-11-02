@@ -36,7 +36,7 @@ public class DocumentElement {
                     break;
                 }
             }
-            if (!elem.elements().isEmpty())
+            if (hasChildren(elem))
             {
                 jsonString = jsonString.concat(",'state':'closed'");
 
@@ -76,5 +76,10 @@ public class DocumentElement {
             jsonString = jsonString.concat("},");
         }
         return jsonString;
+    }
+
+    private static boolean hasChildren(Element elem) {
+        return !elem.elements()
+                .isEmpty();
     }
 }
