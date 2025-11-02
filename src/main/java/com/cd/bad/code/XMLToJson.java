@@ -80,7 +80,8 @@ public class XMLToJson
     }
 
     private static String processElement(String xPathString, Element elem) {
-        return toJsonString(xPathString, elem);
+        DocumentElement documentElem = new DocumentElement();
+         return toJsonString(xPathString, elem);
     }
 
     private static String toJsonString(String xPathString, Element elem) {
