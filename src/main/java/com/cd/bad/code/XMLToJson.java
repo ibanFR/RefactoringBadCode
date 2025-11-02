@@ -114,7 +114,7 @@ public class XMLToJson
                     break;
                 }
             }
-            if (hasChildren(elem))
+            if (!elem.elements().isEmpty())
             {
                 jsonString = jsonString.concat(",'state':'closed'");
 
@@ -170,10 +170,6 @@ public class XMLToJson
             node = (Element) TOCDoc.selectSingleNode(realXPathString);
         }
         return node;
-    }
-
-    private static boolean hasChildren(Element elem) {
-        return !elem.elements().isEmpty();
     }
 
     /*

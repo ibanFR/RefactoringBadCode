@@ -32,7 +32,8 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 1. [Replace Function with Command] - encapsulates behavior in command objects for better testability.
     - Extract method `toJsonString(String, Element)` to convert a Document element to JSON string.
     - Create class `DocumentElement` to represent document elements - encapsulates related data and behavior.
-    - Add `DocumentElement` as parameter to `toJsonString` method
+    - Add `DocumentElement` as parameter to `toJsonString` method.
+    - Inline method `hasChildren` - make the code accessible from `toJsonString` method.
 
 
 
