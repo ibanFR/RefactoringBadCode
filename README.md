@@ -27,4 +27,12 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 5. Extract method `closeJson` to handle JSON closing logic
 6. Extract method `getJsonForDocument` to inject a Document instead of obtaining it inside the method
 
+## Step 3: Refactoring to Testability
+
+1. [Replace Function with Command] - encapsulates behavior in command objects for better testability.
+    - Extract method `toJsonString(String, Element)` to convert a Document element to JSON string.
+    
+
+
 [Decompose conditional]: https://refactoring.guru/decompose-conditional
+[Replace Function with Command]: https://refactoring.guru/replace-function-with-command
