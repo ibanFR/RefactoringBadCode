@@ -7,9 +7,11 @@ import java.util.List;
 
 public class DocumentElement {
 
+    private final Element elem;
     private final String xPathString;
 
-    public DocumentElement(String xPathString) {
+    public DocumentElement(Element elem, String xPathString) {
+        this.elem = elem;
         this.xPathString = xPathString;
     }
 

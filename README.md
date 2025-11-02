@@ -39,6 +39,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Create constructor `DocumentElement(String)` - pass arguments to the command on the constructor.
     - Use `xPathString` field in `toJsonString` method - utilize instance fields for better encapsulation.
     - Safe delete `xPathString` parameter from `toJsonString` method - remove unused parameters to clean up the method signature.
+    - Add `Element` parameter to `DocumentElement` constructor - ensure all necessary data is provided at instantiation.
 
 
 
