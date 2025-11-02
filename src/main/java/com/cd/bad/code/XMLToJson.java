@@ -81,10 +81,10 @@ public class XMLToJson
 
     private static String processElement(String xPathString, Element elem) {
         DocumentElement documentElem = new DocumentElement();
-         return toJsonString(xPathString, elem);
+         return toJsonString(documentElem, xPathString, elem);
     }
 
-    private static String toJsonString(String xPathString, Element elem) {
+    private static String toJsonString(DocumentElement documentElem, String xPathString, Element elem) {
         String jsonString = "";
         String eleName = elem.getName();
         List<Attribute> list = elem.attributes();
