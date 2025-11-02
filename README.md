@@ -42,6 +42,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Add `Element` parameter to `DocumentElement` constructor - ensure all necessary data is provided at instantiation.
     - Use `element` field in `toJsonString` method - utilize instance fields for better encapsulation.
     - Safe delete `element` parameter from `toJsonString` method - further clean up the method signature.
+    - Introduce field `jsonString` to store the result of `toJsonString` method - maintain state within the command object.
 
 
 
