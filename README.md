@@ -44,6 +44,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Use `element` field in `toJsonString` method - utilize instance fields for better encapsulation.
     - Safe delete `element` parameter from `toJsonString` method - further clean up the method signature.
     - Introduce field `jsonString` to store the result of `toJsonString` method - maintain state within the command object.
+    - Introduce field `elementName` to store the element name - move the function state into the command object.
 
 
 

@@ -10,6 +10,7 @@ public class DocumentElement {
     private final Element elem;
     private final String xPathString;
     private String jsonString;
+    private String elementName;
 
     public DocumentElement(Element elem, String xPathString) {
         this.elem = elem;
@@ -18,11 +19,11 @@ public class DocumentElement {
 
     String toJsonString() {
         jsonString = "";
-        String eleName = this.elem.getName();
+        elementName = this.elem.getName();
         List<Attribute> list = this.elem.attributes();
         String titleAttrContent = this.elem.attributeValue("title");
         String fileAttrContent = this.elem.attributeValue("file");
-        if (eleName == "doc")
+        if (elementName == "doc")
         {
             for (Attribute attribute : list)
             {
@@ -66,7 +67,7 @@ public class DocumentElement {
             jsonString = jsonString.concat("},");
         }
 
-        else if (eleName == "folder")
+        else if (elementName == "folder")
         {
             jsonString = jsonString.concat("{");
             for (Attribute attribute : list)
