@@ -33,7 +33,13 @@ public class DocumentElement {
                 if (attrName.equals("key"))
                 {
                     String keyContent = this.elem.attributeValue("key");
-                    jsonString = jsonString.concat("'attr':{'id':'").concat(this.xPathString).concat("_dk:").concat(keyContent).concat("','file':'").concat(fileAttrContent).concat("'}");
+                    jsonString = jsonString.concat("'attr':{'id':'")
+                            .concat(this.xPathString)
+                            .concat("_dk:")
+                            .concat(keyContent)
+                            .concat("','file':'")
+                            .concat(fileAttrContent)
+                            .concat("'}");
 
                     break;
                 }
@@ -41,7 +47,13 @@ public class DocumentElement {
                 {
 
                     String trnumContent = this.elem.attributeValue("trnum");
-                    jsonString = jsonString.concat("'attr':{'id':'").concat(this.xPathString).concat("_dtrn:").concat(trnumContent).concat("','file':'").concat(fileAttrContent).concat("'}");
+                    jsonString = jsonString.concat("'attr':{'id':'")
+                            .concat(this.xPathString)
+                            .concat("_dtrn:")
+                            .concat(trnumContent)
+                            .concat("','file':'")
+                            .concat(fileAttrContent)
+                            .concat("'}");
 
                     break;
                 }
@@ -64,10 +76,16 @@ public class DocumentElement {
                 if (attrName.equals("key"))
                 {
                     String keyContent = this.elem.attributeValue("key");
-                    jsonString = jsonString.concat("'attr':{'id':'").concat(this.xPathString).concat("_fk:").concat(keyContent).concat("'}");
+                    jsonString = jsonString.concat("'attr':{'id':'")
+                            .concat(this.xPathString)
+                            .concat("_fk:")
+                            .concat(keyContent)
+                            .concat("'}");
                     if (fileAttrContent != null)
                     {
-                        jsonString = jsonString.concat("','file':'").concat(fileAttrContent).concat("'}");
+                        jsonString = jsonString.concat("','file':'")
+                                .concat(fileAttrContent)
+                                .concat("'}");
                     }
 
                     break;
@@ -75,9 +93,10 @@ public class DocumentElement {
                 else if (attrName.equals("type"))
                 {
                     String typeContent = this.elem.attributeValue("type");
-                    if (typeContent == "history")
-                    {
-                        jsonString = jsonString.concat("'attr':{'id':'").concat(this.xPathString).concat("_fth,");
+                    if (typeContent == "history") {
+                        jsonString = jsonString.concat("'attr':{'id':'")
+                                .concat(this.xPathString)
+                                .concat("_fth,");
 
                     }
                     break;
