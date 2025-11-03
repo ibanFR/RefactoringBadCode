@@ -11,6 +11,7 @@ public class DocumentElement {
     private final String xPathString;
     private String jsonString;
     private String elementName;
+    private List<Attribute> attributes;
 
     public DocumentElement(Element elem, String xPathString) {
         this.elem = elem;
@@ -20,12 +21,12 @@ public class DocumentElement {
     String toJsonString() {
         jsonString = "";
         elementName = this.elem.getName();
-        List<Attribute> list = this.elem.attributes();
+        attributes = this.elem.attributes();
         String titleAttrContent = this.elem.attributeValue("title");
         String fileAttrContent = this.elem.attributeValue("file");
         if (elementName == "doc")
         {
-            for (Attribute attribute : list)
+            for (Attribute attribute : attributes)
             {
                 jsonString = jsonString.concat("{");
                 String attrName = attribute.getName();
@@ -70,7 +71,7 @@ public class DocumentElement {
         else if (elementName == "folder")
         {
             jsonString = jsonString.concat("{");
-            for (Attribute attribute : list)
+            for (Attribute attribute : attributes)
             {
                 String attrName = attribute.getName();
                 jsonString = jsonString.concat("'data':'").concat(titleAttrContent).concat("',");
