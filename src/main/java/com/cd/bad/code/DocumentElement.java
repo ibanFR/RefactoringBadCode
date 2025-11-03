@@ -13,6 +13,7 @@ public class DocumentElement {
     private String elementName;
     private List<Attribute> attributes;
     private String title;
+    private String file;
 
     public DocumentElement(Element elem, String xPathString) {
         this.elem = elem;
@@ -24,7 +25,7 @@ public class DocumentElement {
         elementName = this.elem.getName();
         attributes = this.elem.attributes();
         title = this.elem.attributeValue("title");
-        String fileAttrContent = this.elem.attributeValue("file");
+        file = this.elem.attributeValue("file");
         if (elementName == "doc")
         {
             for (Attribute attribute : attributes)
@@ -41,7 +42,7 @@ public class DocumentElement {
                             .concat("_dk:")
                             .concat(keyContent)
                             .concat("','file':'")
-                            .concat(fileAttrContent)
+                            .concat(file)
                             .concat("'}");
 
                     break;
@@ -55,7 +56,7 @@ public class DocumentElement {
                             .concat("_dtrn:")
                             .concat(trnumContent)
                             .concat("','file':'")
-                            .concat(fileAttrContent)
+                            .concat(file)
                             .concat("'}");
 
                     break;
@@ -84,10 +85,10 @@ public class DocumentElement {
                             .concat("_fk:")
                             .concat(keyContent)
                             .concat("'}");
-                    if (fileAttrContent != null)
+                    if (file != null)
                     {
                         jsonString = jsonString.concat("','file':'")
-                                .concat(fileAttrContent)
+                                .concat(file)
                                 .concat("'}");
                     }
 

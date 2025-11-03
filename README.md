@@ -47,6 +47,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Introduce field `elementName` to store the element name - move the function state into the command object.
     - Introduce field `attributes` to store the element attributes - move the function state into the command object.
     - Introduce field `title` to store the element title - move the function state into the command object.
+    - Introduce field `file` to store the element filename - move the function state into the command object.
 
 
 
