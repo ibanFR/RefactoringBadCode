@@ -29,7 +29,8 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 
 ## Step 3: Refactoring to Testability
 
-1. [Replace Function with Command] - encapsulates behavior in command objects for better testability.
+1. [Replace Function with Command] aka [Replace Method with Method Object] - encapsulates behavior in command objects 
+   for better testability.
     - Extract method `toJsonString(String, Element)` to convert a Document element to JSON string.
     - Create class `DocumentElement` to represent document elements - encapsulates related data and behavior.
     - Add `DocumentElement` as parameter to `toJsonString` method.
@@ -48,3 +49,4 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 
 [Decompose conditional]: https://refactoring.guru/decompose-conditional
 [Replace Function with Command]: https://refactoring.guru/replace-function-with-command
+[Replace Method with Method Object]: https://refactoring.guru/replace-method-with-method-object
