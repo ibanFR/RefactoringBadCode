@@ -46,6 +46,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Introduce field `jsonString` to store the result of `toJsonString` method - maintain state within the command object.
     - Introduce field `elementName` to store the element name - move the function state into the command object.
     - Introduce field `attributes` to store the element attributes - move the function state into the command object.
+    - Introduce field `title` to store the element title - move the function state into the command object.
 
 
 

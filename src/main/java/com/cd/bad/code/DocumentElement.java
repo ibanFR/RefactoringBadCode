@@ -12,6 +12,7 @@ public class DocumentElement {
     private String jsonString;
     private String elementName;
     private List<Attribute> attributes;
+    private String title;
 
     public DocumentElement(Element elem, String xPathString) {
         this.elem = elem;
@@ -22,7 +23,7 @@ public class DocumentElement {
         jsonString = "";
         elementName = this.elem.getName();
         attributes = this.elem.attributes();
-        String titleAttrContent = this.elem.attributeValue("title");
+        title = this.elem.attributeValue("title");
         String fileAttrContent = this.elem.attributeValue("file");
         if (elementName == "doc")
         {
@@ -31,7 +32,7 @@ public class DocumentElement {
                 jsonString = jsonString.concat("{");
                 String attrName = attribute.getName();
                 //each one has to have "data" line, "attr" line "state" line and "children" line
-                jsonString = jsonString.concat("'data':'").concat(titleAttrContent).concat("',");
+                jsonString = jsonString.concat("'data':'").concat(title).concat("',");
                 if (attrName.equals("key"))
                 {
                     String keyContent = this.elem.attributeValue("key");
@@ -74,7 +75,7 @@ public class DocumentElement {
             for (Attribute attribute : attributes)
             {
                 String attrName = attribute.getName();
-                jsonString = jsonString.concat("'data':'").concat(titleAttrContent).concat("',");
+                jsonString = jsonString.concat("'data':'").concat(title).concat("',");
                 if (attrName.equals("key"))
                 {
                     String keyContent = this.elem.attributeValue("key");
