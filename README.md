@@ -51,6 +51,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Extract method `processDocAttributes` in `DocumentElement` class - break down `toJsonString` methods into smaller pieces.
     - Extract method `addStateClosed` in `DocumentElement` class - compose method to handle state closing logic.
     - Extract method `closeElement` in `DocumentElement` class - compose method to handle element closing logic.
+    - Extract method `processFolderAttributes` in `DocumentElement` class - break down `toJsonString` methods into smaller pieces.
 
 
 

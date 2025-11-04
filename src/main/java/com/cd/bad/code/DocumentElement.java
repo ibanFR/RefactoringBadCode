@@ -32,47 +32,48 @@ public class DocumentElement {
                 addStateClosed();
             }
             closeElement();
-        }
-
-        else if (elementName == "folder")
-        {
+        } else if (elementName == "folder") {
             jsonString = jsonString.concat("{");
-            for (Attribute attribute : attributes)
-            {
-                String attrName = attribute.getName();
-                jsonString = jsonString.concat("'data':'").concat(title).concat("',");
-                if (attrName.equals("key"))
-                {
-                    String keyContent = this.elem.attributeValue("key");
-                    jsonString = jsonString.concat("'attr':{'id':'")
-                            .concat(this.xPathString)
-                            .concat("_fk:")
-                            .concat(keyContent)
-                            .concat("'}");
-                    if (file != null)
-                    {
-                        jsonString = jsonString.concat("','file':'")
-                                .concat(file)
-                                .concat("'}");
-                    }
-
-                    break;
-                }
-                else if (attrName.equals("type"))
-                {
-                    String typeContent = this.elem.attributeValue("type");
-                    if (typeContent == "history") {
-                        jsonString = jsonString.concat("'attr':{'id':'")
-                                .concat(this.xPathString)
-                                .concat("_fth,");
-
-                    }
-                    break;
-                }
-            }
+            processFolderAttributes();
             closeElement();
         }
         return jsonString;
+    }
+
+    private void processFolderAttributes() {
+        for (Attribute attribute : attributes)
+        {
+            String attrName = attribute.getName();
+            jsonString = jsonString.concat("'data':'").concat(title).concat("',");
+            if (attrName.equals("key"))
+            {
+                String keyContent = this.elem.attributeValue("key");
+                jsonString = jsonString.concat("'attr':{'id':'")
+                        .concat(this.xPathString)
+                        .concat("_fk:")
+                        .concat(keyContent)
+                        .concat("'}");
+                if (file != null)
+                {
+                    jsonString = jsonString.concat("','file':'")
+                            .concat(file)
+                            .concat("'}");
+                }
+
+                break;
+            }
+            else if (attrName.equals("type"))
+            {
+                String typeContent = this.elem.attributeValue("type");
+                if (typeContent == "history") {
+                    jsonString = jsonString.concat("'attr':{'id':'")
+                            .concat(this.xPathString)
+                            .concat("_fth,");
+
+                }
+                break;
+            }
+        }
     }
 
     private void closeElement() {
