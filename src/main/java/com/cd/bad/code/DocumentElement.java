@@ -29,7 +29,7 @@ public class DocumentElement {
         if (elementName == "doc") {
             processDocAttributes();
             if (hasChildren(this.elem)) {
-                jsonString = jsonString.concat(",'state':'closed'");
+                addStateClosed();
 
             }
             jsonString = jsonString.concat("},");
@@ -74,6 +74,10 @@ public class DocumentElement {
             jsonString = jsonString.concat("},");
         }
         return jsonString;
+    }
+
+    private void addStateClosed() {
+        jsonString = jsonString.concat(",'state':'closed'");
     }
 
     private void processDocAttributes() {

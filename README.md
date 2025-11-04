@@ -48,7 +48,8 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Introduce field `attributes` to store the element attributes - move the function state into the command object.
     - Introduce field `title` to store the element title - move the function state into the command object.
     - Introduce field `file` to store the element filename - move the function state into the command object.
-    - Extract method `processDocAttributes` in `DocumentElement` class - break down complex methods into smaller pieces.
+    - Extract method `processDocAttributes` in `DocumentElement` class - break down `toJsonString` methods into smaller pieces.
+    - Extract method `addStateClosed` in `DocumentElement` class - compose method to handle state closing logic.
 
 
 
