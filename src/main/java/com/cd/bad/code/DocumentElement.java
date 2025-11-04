@@ -26,44 +26,9 @@ public class DocumentElement {
         attributes = this.elem.attributes();
         title = this.elem.attributeValue("title");
         file = this.elem.attributeValue("file");
-        if (elementName == "doc")
-        {
-            for (Attribute attribute : attributes)
-            {
-                jsonString = jsonString.concat("{");
-                String attrName = attribute.getName();
-                //each one has to have "data" line, "attr" line "state" line and "children" line
-                jsonString = jsonString.concat("'data':'").concat(title).concat("',");
-                if (attrName.equals("key"))
-                {
-                    String keyContent = this.elem.attributeValue("key");
-                    jsonString = jsonString.concat("'attr':{'id':'")
-                            .concat(this.xPathString)
-                            .concat("_dk:")
-                            .concat(keyContent)
-                            .concat("','file':'")
-                            .concat(file)
-                            .concat("'}");
-
-                    break;
-                }
-                else if (attrName.equals("trnum"))
-                {
-
-                    String trnumContent = this.elem.attributeValue("trnum");
-                    jsonString = jsonString.concat("'attr':{'id':'")
-                            .concat(this.xPathString)
-                            .concat("_dtrn:")
-                            .concat(trnumContent)
-                            .concat("','file':'")
-                            .concat(file)
-                            .concat("'}");
-
-                    break;
-                }
-            }
-            if (hasChildren(this.elem))
-            {
+        if (elementName == "doc") {
+            processDocAttributes();
+            if (hasChildren(this.elem)) {
                 jsonString = jsonString.concat(",'state':'closed'");
 
             }
@@ -109,6 +74,43 @@ public class DocumentElement {
             jsonString = jsonString.concat("},");
         }
         return jsonString;
+    }
+
+    private void processDocAttributes() {
+
+        for (Attribute attribute : attributes)
+        {
+            jsonString = jsonString.concat("{");
+            String attrName = attribute.getName();
+            jsonString = jsonString.concat("'data':'").concat(title).concat("',");
+            if (attrName.equals("key"))
+            {
+                String keyContent = this.elem.attributeValue("key");
+                jsonString = jsonString.concat("'attr':{'id':'")
+                        .concat(this.xPathString)
+                        .concat("_dk:")
+                        .concat(keyContent)
+                        .concat("','file':'")
+                        .concat(file)
+                        .concat("'}");
+
+                break;
+            }
+            else if (attrName.equals("trnum"))
+            {
+
+                String trnumContent = this.elem.attributeValue("trnum");
+                jsonString = jsonString.concat("'attr':{'id':'")
+                        .concat(this.xPathString)
+                        .concat("_dtrn:")
+                        .concat(trnumContent)
+                        .concat("','file':'")
+                        .concat(file)
+                        .concat("'}");
+
+                break;
+            }
+        }
     }
 
     private static boolean hasChildren(Element elem) {
