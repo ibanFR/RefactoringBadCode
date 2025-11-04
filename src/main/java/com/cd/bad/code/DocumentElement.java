@@ -30,9 +30,8 @@ public class DocumentElement {
             processDocAttributes();
             if (hasChildren(this.elem)) {
                 addStateClosed();
-
             }
-            jsonString = jsonString.concat("},");
+            closeElement();
         }
 
         else if (elementName == "folder")
@@ -71,9 +70,13 @@ public class DocumentElement {
                     break;
                 }
             }
-            jsonString = jsonString.concat("},");
+            closeElement();
         }
         return jsonString;
+    }
+
+    private void closeElement() {
+        jsonString = jsonString.concat("},");
     }
 
     private void addStateClosed() {
