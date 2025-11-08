@@ -60,6 +60,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Override the type code getter in `DocElement` class to return the literal type code value.
     - Create `FolderElement` subclass and add selector logic for `folder` type code value in the factory method.
     - Override the type code getter in `FolderElement` class to return the literal type code.
+    - Remove type code field `elementName` from `DocumentElement` class. 
  
 
     

@@ -10,7 +10,6 @@ public class DocumentElement {
     private final Element elem;
     private final String xPathString;
     private String jsonString;
-    private String elementName;
     private List<Attribute> attributes;
     private String title;
     private String file;
@@ -30,7 +29,6 @@ public class DocumentElement {
 
     String toJsonString() {
         jsonString = "";
-        elementName = getElemName();
         attributes = this.elem.attributes();
         title = this.elem.attributeValue("title");
         file = this.elem.attributeValue("file");
