@@ -6,4 +6,9 @@ public class FolderElement extends DocumentElement {
     public FolderElement(Element elem, String xPathString) {
         super(elem, xPathString);
     }
+
+    @Override
+    protected String getElemName() {
+        return "folder";
+    }
 }
