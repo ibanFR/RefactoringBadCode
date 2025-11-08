@@ -15,12 +15,15 @@ public class DocumentElement {
     private String title;
     private String file;
 
-    private DocumentElement(Element elem, String xPathString) {
+    protected DocumentElement(Element elem, String xPathString) {
         this.elem = elem;
         this.xPathString = xPathString;
     }
 
     public static DocumentElement createDocumentElement(Element elem, String xPathString) {
+        switch (elem.getName()){
+            case "doc": return new DocElement(elem, xPathString);
+        }
         return new DocumentElement(elem, xPathString);
     }
 
