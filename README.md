@@ -55,6 +55,8 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
 2. [Replace Conditional with Polymorphism] - use polymorphism to handle conditional logic.
     - Extract method `processElement()` in `DocumentElement` class - extract conditional statement into its own method.
     - [Encapsulate variable] `elementName` - self-encapsulate the type code.
+    - [Replace Constructor with Factory Function] aka Replace Constructor with Factory Method - use factory methods to create an instance of `DocumentElement`.
+    
 
 
 

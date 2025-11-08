@@ -15,9 +15,13 @@ public class DocumentElement {
     private String title;
     private String file;
 
-    public DocumentElement(Element elem, String xPathString) {
+    private DocumentElement(Element elem, String xPathString) {
         this.elem = elem;
         this.xPathString = xPathString;
+    }
+
+    public static DocumentElement createDocumentElement(Element elem, String xPathString) {
+        return new DocumentElement(elem, xPathString);
     }
 
     String toJsonString() {
