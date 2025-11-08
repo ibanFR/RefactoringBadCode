@@ -54,10 +54,15 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Extract method `processFolderAttributes` in `DocumentElement` class - break down `toJsonString` methods into smaller pieces.
 2. [Replace Conditional with Polymorphism] - use polymorphism to handle conditional logic.
     - Extract method `processElement()` in `DocumentElement` class - extract conditional statement into its own method.
-    
+    - [Encapsulate variable] `elementName` - self-encapsulate the type code.
 
 
 
 [Decompose conditional]: https://refactoring.guru/decompose-conditional
 [Replace Function with Command]: https://refactoring.guru/replace-function-with-command
 [Replace Method with Method Object]: https://refactoring.guru/replace-method-with-method-object
+[Replace Conditional with Polymorphism]: https://refactoring.com/catalog/replaceConditionalWithPolymorphism.html
+[Replace Type Code with Subclasses]: https://refactoring.com/catalog/replaceTypeCodeWithSubclasses.html
+[Encapsulate Variable]: https://refactoring.com/catalog/encapsulateVariable.html
+[Replace Constructor with Factory Function]: https://refactoring.com/catalog/replaceConstructorWithFactoryFunction.html
+[Push Down Method]: https://refactoring.com/catalog/pushDownMethod.html

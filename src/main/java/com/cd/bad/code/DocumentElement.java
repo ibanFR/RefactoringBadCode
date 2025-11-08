@@ -22,7 +22,7 @@ public class DocumentElement {
 
     String toJsonString() {
         jsonString = "";
-        elementName = this.elem.getName();
+        elementName = getElemName();
         attributes = this.elem.attributes();
         title = this.elem.attributeValue("title");
         file = this.elem.attributeValue("file");
@@ -30,14 +30,18 @@ public class DocumentElement {
         return jsonString;
     }
 
+    private String getElemName() {
+        return this.elem.getName();
+    }
+
     private void processElement() {
-        if (elementName == "doc") {
+        if (getElemName() == "doc") {
             processDocAttributes();
             if (hasChildren(this.elem)) {
                 addStateClosed();
             }
             closeElement();
-        } else if (elementName == "folder") {
+        } else if (getElemName() == "folder") {
             jsonString = jsonString.concat("{");
             processFolderAttributes();
             closeElement();
