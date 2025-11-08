@@ -70,6 +70,8 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - [Push Down Method] `hasChildren` to `DocElement` class - move method to the subclass where it's relevant.
     - Override `processElement` method in `FolderElement` class. Copy the relevant logic from the conditional statement.
     - [Push Down Method] `processFolderAttributes` to `FolderElement` class - move method to the subclass where it's relevant.
+    - Rename `processFolderAttributes` method in `FolderElement` class to `processAttributes` - generalize method name for better readability.
+    -
  
 
     

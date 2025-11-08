@@ -17,11 +17,11 @@ public class FolderElement extends DocumentElement {
     @Override
     protected void processElement() {
         jsonString = jsonString.concat("{");
-        processFolderAttributes();
+        processAttributes();
         closeElement();
     }
 
-    protected void processFolderAttributes() {
+    protected void processAttributes() {
         for (Attribute attribute : attributes)
         {
             String attrName = attribute.getName();
