@@ -68,6 +68,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Rename `processDocAttributes` method in `DocElement` class to `processAttributes` - generalize method name for better readability.
     - [Push Down Method] `addStateClosed` to `DocElement` class - move method to the subclass where it's relevant.
     - [Push Down Method] `hasChildren` to `DocElement` class - move method to the subclass where it's relevant.
+    - Override `processElement` method in `FolderElement` class. Copy the relevant logic from the conditional statement.
  
 
     

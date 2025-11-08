@@ -45,13 +45,11 @@ public abstract class DocumentElement {
         if (getElemName() == "doc") {
             throw new IllegalStateException("processElement should be overridden in DocElement");
         } else if (getElemName() == "folder") {
-            jsonString = jsonString.concat("{");
-            processFolderAttributes();
-            closeElement();
+            throw new IllegalStateException("processElement should be overridden in FolderElement");
         }
     }
 
-    private void processFolderAttributes() {
+    protected void processFolderAttributes() {
         for (Attribute attribute : attributes)
         {
             String attrName = attribute.getName();
