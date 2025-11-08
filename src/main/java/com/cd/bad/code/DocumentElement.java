@@ -23,8 +23,9 @@ public class DocumentElement {
         switch (elem.getName()){
             case "doc": return new DocElement(elem, xPathString);
             case "folder": return new FolderElement(elem, xPathString);
+            default:
+                throw new IllegalStateException("Unexpected value: " + elem.getName());
         }
-        return new DocumentElement(elem, xPathString);
     }
 
     String toJsonString() {
