@@ -65,6 +65,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Make `getElementName` an abstract method and `DocumentElement` an abstract class.
     - Override `processElement` method in `DocElement` class. Copy the relevant logic from the conditional statement.
     - [Push Down Method] `processDocAttributes` to `DocElement` class - move method to the subclass where it's relevant.
+    - Rename `processDocAttributes` method in `DocElement` class to `processAttributes` - generalize method name for better readability.
  
 
     

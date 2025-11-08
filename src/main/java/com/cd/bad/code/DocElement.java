@@ -15,14 +15,14 @@ public class DocElement extends DocumentElement {
 
     @Override
     protected void processElement() {
-        processDocAttributes();
+        processAttributes();
         if (hasChildren(this.elem)) {
             addStateClosed();
         }
         closeElement();
     }
 
-    protected void processDocAttributes() {
+    protected void processAttributes() {
 
         for (Attribute attribute : attributes)
         {
