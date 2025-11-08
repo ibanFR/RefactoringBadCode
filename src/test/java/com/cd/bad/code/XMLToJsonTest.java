@@ -1,15 +1,13 @@
 package com.cd.bad.code;
 
 import org.approvaltests.Approvals;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.net.URL;
 
-public class XMLToJsonTest
-{
+class XMLToJsonTest {
     @Test
-    public void shouldTranslateEmptyXMLToJson() throws Exception
-    {
+    void shouldTranslateEmptyXMLToJson() throws Exception {
         XMLToJson translate = new XMLToJson();
 
         URL url = new URL("file:./src/test/resources/toc.xml");
