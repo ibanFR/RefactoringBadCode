@@ -7,9 +7,9 @@ import java.util.List;
 
 public abstract class DocumentElement {
 
-    private final Element elem;
+    protected final Element elem;
     private final String xPathString;
-    private String jsonString;
+    protected String jsonString;
     private List<Attribute> attributes;
     private String title;
     private String file;
@@ -41,13 +41,9 @@ public abstract class DocumentElement {
 
     protected abstract String getElemName();
 
-    private void processElement() {
+    protected void processElement() {
         if (getElemName() == "doc") {
-            processDocAttributes();
-            if (hasChildren(this.elem)) {
-                addStateClosed();
-            }
-            closeElement();
+            throw new IllegalStateException("processElement should be overridden in DocElement");
         } else if (getElemName() == "folder") {
             jsonString = jsonString.concat("{");
             processFolderAttributes();
@@ -91,15 +87,15 @@ public abstract class DocumentElement {
         }
     }
 
-    private void closeElement() {
+    protected void closeElement() {
         jsonString = jsonString.concat("},");
     }
 
-    private void addStateClosed() {
+    protected void addStateClosed() {
         jsonString = jsonString.concat(",'state':'closed'");
     }
 
-    private void processDocAttributes() {
+    protected void processDocAttributes() {
 
         for (Attribute attribute : attributes)
         {
@@ -136,7 +132,7 @@ public abstract class DocumentElement {
         }
     }
 
-    private static boolean hasChildren(Element elem) {
+    protected static boolean hasChildren(Element elem) {
         return !elem.elements()
                 .isEmpty();
     }

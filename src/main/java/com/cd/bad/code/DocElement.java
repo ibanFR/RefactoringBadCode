@@ -11,4 +11,13 @@ public class DocElement extends DocumentElement {
     protected String getElemName() {
         return "doc";
     }
+
+    @Override
+    protected void processElement() {
+        processDocAttributes();
+        if (hasChildren(this.elem)) {
+            addStateClosed();
+        }
+        closeElement();
+    }
 }
