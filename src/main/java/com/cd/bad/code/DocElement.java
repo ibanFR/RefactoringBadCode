@@ -6,4 +6,9 @@ public class DocElement extends DocumentElement {
     public DocElement(Element elem, String xPathString) {
         super(elem, xPathString);
     }
+
+    @Override
+    protected String getElemName() {
+        return "doc";
+    }
 }

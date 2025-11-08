@@ -37,7 +37,7 @@ public class DocumentElement {
         return jsonString;
     }
 
-    private String getElemName() {
+    protected String getElemName() {
         return this.elem.getName();
     }
 
