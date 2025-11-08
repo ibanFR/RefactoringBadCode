@@ -62,6 +62,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Override the type code getter in `FolderElement` class to return the literal type code.
     - Remove type code field `elementName` from `DocumentElement` class.
     - Add default branch in the factory method to handle unexpected type code values.
+    - Make `getElementName` an abstract method and `DocumentElement` an abstract class
  
 
     

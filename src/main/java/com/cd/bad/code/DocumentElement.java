@@ -5,7 +5,7 @@ import org.dom4j.Element;
 
 import java.util.List;
 
-public class DocumentElement {
+public abstract class DocumentElement {
 
     private final Element elem;
     private final String xPathString;
@@ -39,9 +39,7 @@ public class DocumentElement {
         return jsonString;
     }
 
-    protected String getElemName() {
-        return this.elem.getName();
-    }
+    protected abstract String getElemName();
 
     private void processElement() {
         if (getElemName() == "doc") {
