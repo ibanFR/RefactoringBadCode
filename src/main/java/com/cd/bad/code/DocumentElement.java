@@ -91,10 +91,6 @@ public abstract class DocumentElement {
         jsonString = jsonString.concat("},");
     }
 
-    protected void addStateClosed() {
-        jsonString = jsonString.concat(",'state':'closed'");
-    }
-
     protected static boolean hasChildren(Element elem) {
         return !elem.elements()
                 .isEmpty();

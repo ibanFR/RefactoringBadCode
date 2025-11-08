@@ -58,4 +58,8 @@ public class DocElement extends DocumentElement {
             }
         }
     }
+
+    protected void addStateClosed() {
+        jsonString = jsonString.concat(",'state':'closed'");
+    }
 }
