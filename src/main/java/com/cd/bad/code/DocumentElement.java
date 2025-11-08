@@ -26,6 +26,11 @@ public class DocumentElement {
         attributes = this.elem.attributes();
         title = this.elem.attributeValue("title");
         file = this.elem.attributeValue("file");
+        processElement();
+        return jsonString;
+    }
+
+    private void processElement() {
         if (elementName == "doc") {
             processDocAttributes();
             if (hasChildren(this.elem)) {
@@ -37,7 +42,6 @@ public class DocumentElement {
             processFolderAttributes();
             closeElement();
         }
-        return jsonString;
     }
 
     private void processFolderAttributes() {

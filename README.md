@@ -52,6 +52,9 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Extract method `addStateClosed` in `DocumentElement` class - compose method to handle state closing logic.
     - Extract method `closeElement` in `DocumentElement` class - compose method to handle element closing logic.
     - Extract method `processFolderAttributes` in `DocumentElement` class - break down `toJsonString` methods into smaller pieces.
+2. [Replace Conditional with Polymorphism] - use polymorphism to handle conditional logic.
+    - Extract method `processElement()` in `DocumentElement` class - extract conditional statement into its own method.
+    
 
 
 
