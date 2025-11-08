@@ -91,8 +91,4 @@ public abstract class DocumentElement {
         jsonString = jsonString.concat("},");
     }
 
-    protected static boolean hasChildren(Element elem) {
-        return !elem.elements()
-                .isEmpty();
-    }
 }

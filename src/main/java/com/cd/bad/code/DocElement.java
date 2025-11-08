@@ -16,7 +16,7 @@ public class DocElement extends DocumentElement {
     @Override
     protected void processElement() {
         processAttributes();
-        if (hasChildren(this.elem)) {
+        if (hasChildren()) {
             addStateClosed();
         }
         closeElement();
@@ -57,6 +57,10 @@ public class DocElement extends DocumentElement {
                 break;
             }
         }
+    }
+
+    protected boolean hasChildren() {
+        return !this.elem.elements().isEmpty();
     }
 
     protected void addStateClosed() {
