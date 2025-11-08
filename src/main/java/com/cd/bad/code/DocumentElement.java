@@ -8,11 +8,11 @@ import java.util.List;
 public abstract class DocumentElement {
 
     protected final Element elem;
-    private final String xPathString;
+    protected final String xPathString;
     protected String jsonString;
-    private List<Attribute> attributes;
-    private String title;
-    private String file;
+    protected List<Attribute> attributes;
+    protected String title;
+    protected String file;
 
     protected DocumentElement(Element elem, String xPathString) {
         this.elem = elem;
@@ -93,43 +93,6 @@ public abstract class DocumentElement {
 
     protected void addStateClosed() {
         jsonString = jsonString.concat(",'state':'closed'");
-    }
-
-    protected void processDocAttributes() {
-
-        for (Attribute attribute : attributes)
-        {
-            jsonString = jsonString.concat("{");
-            String attrName = attribute.getName();
-            jsonString = jsonString.concat("'data':'").concat(title).concat("',");
-            if (attrName.equals("key"))
-            {
-                String keyContent = this.elem.attributeValue("key");
-                jsonString = jsonString.concat("'attr':{'id':'")
-                        .concat(this.xPathString)
-                        .concat("_dk:")
-                        .concat(keyContent)
-                        .concat("','file':'")
-                        .concat(file)
-                        .concat("'}");
-
-                break;
-            }
-            else if (attrName.equals("trnum"))
-            {
-
-                String trnumContent = this.elem.attributeValue("trnum");
-                jsonString = jsonString.concat("'attr':{'id':'")
-                        .concat(this.xPathString)
-                        .concat("_dtrn:")
-                        .concat(trnumContent)
-                        .concat("','file':'")
-                        .concat(file)
-                        .concat("'}");
-
-                break;
-            }
-        }
     }
 
     protected static boolean hasChildren(Element elem) {
