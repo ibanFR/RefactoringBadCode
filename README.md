@@ -6,7 +6,7 @@ See the checklist below for the complete list of refactorings applied in the tut
 
 ## Step 1: Removing the clutter
 
-- [ ] Run `` with coverage.
+- [ ] Run `XMLToJsonTest` with coverage.
 - [ ] Rename variable `url` to `urlToTOC` - enables better understanding of the variable's purpose.
 - [ ] Remove dead/commented code - improves code clarity and maintainability.
 - [ ] Remove the cast to Element - unnecessary and clutters the code.
