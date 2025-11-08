@@ -72,6 +72,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - [Push Down Method] `processFolderAttributes` to `FolderElement` class - move method to the subclass where it's relevant.
     - Rename `processFolderAttributes` method in `FolderElement` class to `processAttributes` - generalize method name for better readability.
     - Declare processElement method in DocumentElement class as abstract - enforce implementation in subclasses.
+    - Safe delete `getElementName` method from `DocumentElement` class and its subclasses - clean up unused methods.
  
 
     

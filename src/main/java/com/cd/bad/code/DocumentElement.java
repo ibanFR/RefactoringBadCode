@@ -39,8 +39,6 @@ public abstract class DocumentElement {
         return jsonString;
     }
 
-    protected abstract String getElemName();
-
     protected abstract void processElement();
 
     protected void closeElement() {

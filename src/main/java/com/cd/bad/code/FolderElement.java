@@ -10,11 +10,6 @@ public class FolderElement extends DocumentElement {
     }
 
     @Override
-    protected String getElemName() {
-        return "folder";
-    }
-
-    @Override
     protected void processElement() {
         jsonString = jsonString.concat("{");
         processAttributes();

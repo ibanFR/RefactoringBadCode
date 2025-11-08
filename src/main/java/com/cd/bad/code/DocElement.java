@@ -9,11 +9,6 @@ public class DocElement extends DocumentElement {
     }
 
     @Override
-    protected String getElemName() {
-        return "doc";
-    }
-
-    @Override
     protected void processElement() {
         processAttributes();
         if (hasChildren()) {
