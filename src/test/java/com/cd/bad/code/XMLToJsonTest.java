@@ -1,11 +1,9 @@
 package com.cd.bad.code;
 
 import org.approvaltests.Approvals;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.net.URL;
-
-import static org.junit.Assert.assertEquals;
 
 public class XMLToJsonTest
 {
