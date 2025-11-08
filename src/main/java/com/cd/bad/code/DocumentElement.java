@@ -23,6 +23,7 @@ public class DocumentElement {
     public static DocumentElement createDocumentElement(Element elem, String xPathString) {
         switch (elem.getName()){
             case "doc": return new DocElement(elem, xPathString);
+            case "folder": return new FolderElement(elem, xPathString);
         }
         return new DocumentElement(elem, xPathString);
     }

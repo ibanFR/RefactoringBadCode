@@ -58,6 +58,9 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - [Replace Constructor with Factory Function] aka Replace Constructor with Factory Method - use factory methods to create an instance of `DocumentElement`.
     - Create `DocElement` subclass and add selector logic for `doc` type code value in the factory method.
     - Override the type code getter in `DocElement` class to return the literal type code value.
+    - Create `FolderElement` subclass and add selector logic for `folder` type code value in the factory method.
+ 
+
     
 
 
