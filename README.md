@@ -71,7 +71,7 @@ Code examples for [Refactoring Legacy Code Tutorial](https://ibanfr.github.io/xp
     - Override `processElement` method in `FolderElement` class. Copy the relevant logic from the conditional statement.
     - [Push Down Method] `processFolderAttributes` to `FolderElement` class - move method to the subclass where it's relevant.
     - Rename `processFolderAttributes` method in `FolderElement` class to `processAttributes` - generalize method name for better readability.
-    -
+    - Declare processElement method in DocumentElement class as abstract - enforce implementation in subclasses.
  
 
     

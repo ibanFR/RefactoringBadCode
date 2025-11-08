@@ -41,13 +41,7 @@ public abstract class DocumentElement {
 
     protected abstract String getElemName();
 
-    protected void processElement() {
-        if (getElemName() == "doc") {
-            throw new IllegalStateException("processElement should be overridden in DocElement");
-        } else if (getElemName() == "folder") {
-            throw new IllegalStateException("processElement should be overridden in FolderElement");
-        }
-    }
+    protected abstract void processElement();
 
     protected void closeElement() {
         jsonString = jsonString.concat("},");
