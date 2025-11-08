@@ -82,6 +82,10 @@ Introduce further refactorings to improve testability and maintainability.
 - [ ] Declare `processElement` method in `DocumentElement` class as abstract - enforce implementation in subclasses.
 - [ ] Safe delete `getElementName` method from `DocumentElement` class and its subclasses - clean up unused methods.
 
+### Adding Tests
+
+- [ ] Create test `shouldParseSimpleDocElement` in `XMLToJsonTest` class - verify JSON output for a simple doc element.
+
 
 [Decompose conditional]: https://refactoring.guru/decompose-conditional
 [Replace Function with Command]: https://refactoring.guru/replace-function-with-command
