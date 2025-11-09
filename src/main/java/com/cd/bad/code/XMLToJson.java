@@ -64,7 +64,7 @@ public class XMLToJson
 
     }
 
-    private String getJsonForDocument(String xPathString, Document TOCDoc) throws Exception {
+    String getJsonForDocument(String xPathString, Document TOCDoc) throws Exception {
 
         String jsonString = "[";
         Element node = getNode(xPathString, TOCDoc);
@@ -76,7 +76,10 @@ public class XMLToJson
     }
 
     private static String closeJson(String jsonString) {
-        jsonString = jsonString.substring(0, jsonString.length() - 1);
+
+        if (jsonString.endsWith(",")){
+            jsonString = jsonString.substring(0, jsonString.length() - 1);
+        }
         jsonString = jsonString.concat("]");
         return jsonString;
     }
